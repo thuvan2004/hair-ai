@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-border rounded-full hover:bg-brand-violet/50;
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  @apply bg-[#161c2a]/60 backdrop-blur-md border border-dark-border/80 shadow-xl shadow-black/10 rounded-2xl;
+}
+
+.glass-nav {
+  @apply bg-[#0b0f19]/75 backdrop-blur-lg border-b border-dark-border/50;
+}
+
+.glass-panel {
+  @apply bg-[#111724]/80 backdrop-blur-md border border-dark-border/40;
+}
+
+/* Custom Glowing effects */
+.glow-purple {
+  box-shadow: 0 0 40px -5px rgba(124, 58, 237, 0.25);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px -5px rgba(6, 182, 212, 0.25);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 40px -5px rgba(16, 185, 129, 0.25);
+}
+
+/* Slider comparison drag bar overlay */
+.slider-handle {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(124, 58, 237, 0.4);
+}
+
+/* Skeletons */
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #1f2937 25%, #374151 50%, #1f2937 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
