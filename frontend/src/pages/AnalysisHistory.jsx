@@ -66,7 +66,7 @@ const AnalysisHistory = () => {
   if (loading) {
     return (
       <div className="flex flex-col gap-6">
-        <h1 className="text-3xl font-extrabold text-white">Analysis History</h1>
+        <h1 className="text-3xl font-display font-bold text-white">Analysis History</h1>
         <CardSkeleton />
         <CardSkeleton />
       </div>
@@ -84,7 +84,7 @@ const AnalysisHistory = () => {
       )}
 
       <div>
-        <h1 className="text-3xl font-extrabold text-white">Analysis History</h1>
+        <h1 className="text-3xl font-display font-bold text-white">Analysis History</h1>
         <p className="text-sm text-gray-400">Review, download, and email your clinical hair loss summaries</p>
       </div>
 
@@ -161,21 +161,21 @@ const AnalysisHistory = () => {
                   <div className="px-6 pb-6 border-t border-dark-border/40 pt-6 bg-dark-card/10 flex flex-col gap-6 animate-fade-in">
                     {/* Score summary grid */}
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                      <div className="p-4 bg-[#0f1422] border border-dark-border/50 rounded-xl">
+                      <div className="p-4 bg-[#0D0F16] border border-dark-border/50 rounded-xl">
                         <p className="text-[10px] text-gray-400 uppercase font-semibold">Norwood Stage</p>
-                        <p className="text-lg font-black text-purple-400 mt-1">{record.norwoodStage}</p>
+                        <p className="text-lg font-readout font-semibold text-violet-400 mt-1">{record.norwoodStage}</p>
                       </div>
-                      <div className="p-4 bg-[#0f1422] border border-dark-border/50 rounded-xl">
+                      <div className="p-4 bg-[#0D0F16] border border-dark-border/50 rounded-xl">
                         <p className="text-[10px] text-gray-400 uppercase font-semibold">Density Index</p>
-                        <p className="text-lg font-black text-cyan-400 mt-1">{record.densityScore}/100</p>
+                        <p className="text-lg font-readout font-semibold text-brand-cyan mt-1">{record.densityScore}/100</p>
                       </div>
-                      <div className="p-4 bg-[#0f1422] border border-dark-border/50 rounded-xl">
+                      <div className="p-4 bg-[#0D0F16] border border-dark-border/50 rounded-xl">
                         <p className="text-[10px] text-gray-400 uppercase font-semibold">Crown Scalp Area</p>
-                        <p className="text-lg font-black text-white mt-1">{record.crownThinning}%</p>
+                        <p className="text-lg font-readout font-semibold text-white mt-1">{record.crownThinning}%</p>
                       </div>
-                      <div className="p-4 bg-[#0f1422] border border-dark-border/50 rounded-xl">
+                      <div className="p-4 bg-[#0D0F16] border border-dark-border/50 rounded-xl">
                         <p className="text-[10px] text-gray-400 uppercase font-semibold">General Health</p>
-                        <p className="text-lg font-black text-emerald-400 mt-1">{record.healthScore}/100</p>
+                        <p className="text-lg font-readout font-semibold text-brand-emerald mt-1">{record.healthScore}/100</p>
                       </div>
                     </div>
 
