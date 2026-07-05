@@ -48,11 +48,11 @@ const Layout = ({ children }) => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-gray-100 flex flex-col md:flex-row">
+    <div className="min-h-screen bg-[#090B10] text-gray-100 flex flex-col md:flex-row">
       {/* Mobile Navbar */}
       <div className="md:hidden glass-nav h-16 px-4 flex items-center justify-between z-30 fixed top-0 w-full">
         <Link to="/dashboard" className="flex items-center gap-2">
-          <span className="text-xl font-extrabold bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
+          <span className="text-xl font-display font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent tracking-tight">
             HAIRSCOPE AI
           </span>
         </Link>
@@ -74,7 +74,7 @@ const Layout = ({ children }) => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 bg-[#0b0f19]/95 backdrop-blur-lg z-20 flex flex-col p-6 gap-4 border-t border-dark-border animate-fade-in">
+        <div className="md:hidden fixed inset-0 top-16 bg-[#090B10]/95 backdrop-blur-lg z-20 flex flex-col p-6 gap-4 border-t border-dark-border animate-fade-in">
           {navigation.map((item) => {
             const Icon = item.icon;
             return (
@@ -104,14 +104,14 @@ const Layout = ({ children }) => {
       )}
 
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col w-64 bg-[#111724]/90 border-r border-dark-border/60 p-6 fixed inset-y-0 left-0 z-20">
+      <aside className="hidden md:flex flex-col w-64 bg-[#0F1118]/90 border-r border-dark-border/60 p-6 fixed inset-y-0 left-0 z-20">
         <div className="mb-8">
           <Link to="/dashboard" className="flex items-center gap-2">
-            <span className="text-2xl font-black bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent tracking-wide">
+            <span className="text-2xl font-display font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent tracking-tight">
               HAIRSCOPE
             </span>
           </Link>
-          <span className="text-[10px] tracking-widest text-cyan-400 font-bold block mt-1">
+          <span className="font-readout text-[10px] tracking-widest text-brand-cyan font-semibold block mt-1.5">
             AI ANALYSIS PLATFORM
           </span>
         </div>
@@ -123,13 +123,16 @@ const Layout = ({ children }) => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all ${
+                className={`relative flex items-center gap-3 pl-3 pr-4 py-3 rounded-lg transition-all ${
                   isActive(item.path)
-                    ? 'bg-brand-violet/15 border border-brand-violet/25 text-white shadow-inner glow-purple'
+                    ? 'bg-brand-violet/10 text-white'
                     : 'text-gray-400 hover:bg-dark-card hover:text-gray-200'
                 }`}
               >
-                <Icon className="w-5 h-5 shrink-0" />
+                {isActive(item.path) && (
+                  <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] rounded-full bg-brand-cyan" />
+                )}
+                <Icon className={`w-5 h-5 shrink-0 ${isActive(item.path) ? 'text-brand-cyan' : ''}`} />
                 <span className="text-sm font-medium">{item.name}</span>
               </Link>
             );
