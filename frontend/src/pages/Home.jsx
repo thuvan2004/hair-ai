@@ -1,130 +1,170 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, BarChart2, ShieldAlert, ArrowRight, Apple, CheckCircle2 } from 'lucide-react';
+import { ShieldAlert, Apple } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const Home = () => {
   const { token } = useAuth();
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-gray-100 flex flex-col">
-      {/* Navigation Header */}
+    <div className="min-h-screen bg-dark-bg text-gray-100 flex flex-col">
+      {/* Nav */}
       <header className="glass-nav h-20 w-full fixed top-0 left-0 z-50 px-6 md:px-12 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-black bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent tracking-wide">
-            HAIRSCOPE AI
-          </span>
+        <Link to="/" className="flex items-baseline gap-2">
+          <span className="text-xl font-display font-bold text-white tracking-tight">HAIRSCOPE</span>
+          <span className="font-readout text-[10px] text-brand-cyan tracking-widest">AI</span>
         </Link>
-        <div className="flex items-center gap-6">
-          <Link to="/about" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
-            About Science
+        <div className="flex items-center gap-8">
+          <Link to="/about" className="text-sm text-gray-400 hover:text-white transition-colors">
+            About the science
           </Link>
           {token ? (
             <Link
               to="/dashboard"
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 font-semibold text-sm shadow-lg text-white transition-all transform hover:scale-[1.02]"
+              className="px-5 py-2.5 border border-brand-cyan/50 hover:bg-brand-cyan/10 font-readout text-xs uppercase tracking-widest text-brand-cyan transition-all"
             >
-              Go to Dashboard
+              Dashboard
             </Link>
           ) : (
-            <div className="flex items-center gap-3">
-              <Link to="/login" className="text-sm font-medium text-gray-300 hover:text-white px-4 py-2 rounded-lg hover:bg-dark-card transition-all">
-                Sign In
+            <div className="flex items-center gap-5">
+              <Link to="/login" className="text-sm text-gray-300 hover:text-white transition-colors">
+                Sign in
               </Link>
               <Link
                 to="/register"
-                className="px-5 py-2.5 rounded-xl bg-brand-violet hover:bg-purple-600 font-semibold text-sm shadow-md text-white transition-all"
+                className="px-5 py-2.5 border border-brand-violet/60 hover:bg-brand-violet/10 font-readout text-xs uppercase tracking-widest text-white transition-all"
               >
-                Sign Up
+                Get started
               </Link>
             </div>
           )}
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="flex-1 pt-32 pb-20 px-6 md:px-12 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
-        {/* Glow Element */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-purple-600/10 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
-
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-violet/10 border border-brand-violet/20 text-xs font-semibold text-purple-400 mb-6 uppercase tracking-wider">
-          <Sparkles className="w-3.5 h-3.5" /> Next-Gen Scalp Analysis
-        </div>
-
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-          Track Your Hair Health With <br />
-          <span className="bg-gradient-to-r from-purple-500 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-            AI-Powered Image Analysis
-          </span>
-        </h1>
-
-        <p className="text-lg text-gray-400 max-w-2xl mb-8 leading-relaxed">
-          Upload scalp and hairline photos to estimate your Norwood stage, measure hair density, track progression metrics over time, and receive specialized hair-loss meal planning recommendations.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center gap-4 mb-16">
-          <Link
-            to={token ? '/dashboard' : '/register'}
-            className="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 font-bold text-white shadow-xl shadow-purple-900/20 transition-all flex items-center gap-2 group hover:scale-[1.02]"
-          >
-            Start Analyzing Free <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link
-            to="/about"
-            className="px-8 py-4 rounded-xl bg-[#161c2a] hover:bg-[#1f293d] border border-dark-border font-bold text-gray-200 transition-all"
-          >
-            How it Works
-          </Link>
-        </div>
-
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full text-left">
-          <div className="glass-card p-6 flex flex-col gap-3 hover:border-brand-violet/30 transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-brand-violet/10 border border-brand-violet/20 flex items-center justify-center text-purple-400 mb-2">
-              <Sparkles className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-white">Norwood Stage Estimation</h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              Detect hairline recession and crown thinning based on the clinical Norwood-Hamilton scale.
-            </p>
-          </div>
-
-          <div className="glass-card p-6 flex flex-col gap-3 hover:border-brand-cyan/30 transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-cyan-400 mb-2">
-              <BarChart2 className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-white">Progress & Slide Metrics</h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              Compare scalp photos side-by-side using draggable overlay comparison sliders and charts.
-            </p>
-          </div>
-
-          <div className="glass-card p-6 flex flex-col gap-3 hover:border-brand-emerald/30 transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-emerald-400 mb-2">
-              <Apple className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-white">Targeted Nutrition Scoring</h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              Receive a weekly meal plan (vegetarian/non-vegetarian options) targeting iron, zinc, protein, and vitamins.
-            </p>
-          </div>
-        </div>
-
-        {/* Disclaimer Area */}
-        <div className="mt-16 glass-card p-6 border-rose-500/20 bg-rose-500/5 max-w-4xl w-full flex items-start gap-4 text-left">
-          <ShieldAlert className="w-6 h-6 text-rose-400 shrink-0 mt-0.5" />
+      {/* Hero — asymmetric: copy on the left, a live-readout instrument mock on the right,
+          instead of the centered-gradient-headline pattern. */}
+      <section className="flex-1 pt-36 pb-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-16 lg:gap-8 items-center">
+          {/* Copy */}
           <div>
-            <h4 className="text-sm font-bold text-rose-400 mb-1">Medical Disclaimer</h4>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-6 h-px bg-brand-cyan" />
+              <span className="font-readout text-[11px] text-brand-cyan tracking-[0.25em] uppercase">
+                Norwood Engine — v2
+              </span>
+            </div>
+
+            <h1 className="text-4xl md:text-[3.4rem] font-display font-bold text-white leading-[1.08] mb-6">
+              Your hairline,<br />
+              measured — <span className="relative inline-block">
+                not guessed
+                <span className="absolute left-0 -bottom-1 w-full h-[6px] bg-brand-violet/40" />
+              </span>.
+            </h1>
+
+            <p className="text-base text-gray-400 max-w-md mb-10 leading-relaxed">
+              Upload a front, top, and crown photo. HairScope estimates your Norwood stage, scores density, and builds a nutrition plan around what it finds — logged over time, not guessed once.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-start gap-4 mb-14">
+              <Link
+                to={token ? '/dashboard' : '/register'}
+                className="group px-7 py-4 border border-brand-violet bg-brand-violet/10 hover:bg-brand-violet/20 transition-all flex items-center gap-3"
+              >
+                <span className="font-readout text-xs uppercase tracking-[0.15em] text-white">Start your first scan</span>
+                <span className="text-brand-cyan group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+              <Link
+                to="/about"
+                className="px-7 py-4 border border-dark-border hover:border-gray-600 font-readout text-xs uppercase tracking-[0.15em] text-gray-300 transition-all"
+              >
+                How scoring works
+              </Link>
+            </div>
+
+            {/* Three facts as a hairline-divided readout row, not icon-boxes */}
+            <div className="grid grid-cols-3 gap-6 max-w-md border-t border-dark-border pt-6">
+              <div>
+                <p className="font-readout text-2xl text-white">7</p>
+                <p className="text-[11px] text-gray-500 mt-1 leading-tight">Norwood stages tracked</p>
+              </div>
+              <div>
+                <p className="font-readout text-2xl text-brand-cyan">3</p>
+                <p className="text-[11px] text-gray-500 mt-1 leading-tight">Angles per scan</p>
+              </div>
+              <div>
+                <p className="font-readout text-2xl text-brand-emerald">2</p>
+                <p className="text-[11px] text-gray-500 mt-1 leading-tight">Diet-matched meal plans</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Instrument readout mock — the signature visual, replacing a stock hero image */}
+          <div className="scan-frame relative border border-dark-border bg-dark-card/60 p-7">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-cyan/50 to-transparent animate-pulse-scan" />
+
+            <div className="flex justify-between items-baseline mb-8">
+              <span className="font-readout text-[10px] text-gray-500 tracking-widest uppercase">Sample readout</span>
+              <span className="flex items-center gap-1.5 font-readout text-[10px] text-brand-emerald tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-emerald" /> LIVE
+              </span>
+            </div>
+
+            <div className="flex items-center gap-8 mb-8">
+              <div className="relative w-28 h-28 shrink-0">
+                <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
+                  <circle cx="50" cy="50" r="42" fill="none" stroke="#262B3A" strokeWidth="8" />
+                  <circle
+                    cx="50" cy="50" r="42" fill="none"
+                    stroke="#00C2D1" strokeWidth="8" strokeLinecap="round"
+                    strokeDasharray={2 * Math.PI * 42}
+                    strokeDashoffset={2 * Math.PI * 42 * (1 - 0.74)}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <span className="font-readout text-2xl text-white">74</span>
+                  <span className="text-[9px] text-gray-500">density</span>
+                </div>
+              </div>
+              <div className="flex-1 flex flex-col gap-3">
+                <div className="flex justify-between items-center border-b border-dark-border/60 pb-2">
+                  <span className="text-xs text-gray-400">Norwood stage</span>
+                  <span className="font-readout text-sm text-white">N2</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-dark-border/60 pb-2">
+                  <span className="text-xs text-gray-400">Health index</span>
+                  <span className="font-readout text-sm text-brand-emerald">81/100</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xs text-gray-400">Crown exposure</span>
+                  <span className="font-readout text-sm text-white">12%</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-dark-border pt-4 flex items-start gap-3">
+              <Apple className="w-4 h-4 text-brand-emerald shrink-0 mt-0.5" />
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Zinc and iron intake flagged below target — meal plan adjusted for this scan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="mt-20 border-l-2 border-brand-rose/60 bg-brand-rose/5 max-w-4xl w-full flex items-start gap-4 p-6">
+          <ShieldAlert className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />
+          <div>
+            <p className="font-readout text-[10px] text-rose-400 tracking-widest uppercase mb-1">Medical disclaimer</p>
             <p className="text-xs text-gray-400 leading-relaxed">
-              HairScope AI is designed solely for cosmetic hair tracking, general education, and dietary support. This software is not a diagnostic tool and does not replace medical advice, diagnosis, or clinical evaluation. Always consult a board-certified dermatologist or healthcare professional regarding hair loss treatments or severe conditions.
+              HairScope AI is built for cosmetic tracking, education, and dietary support — not clinical diagnosis. Consult a board-certified dermatologist for treatment decisions or advanced hair loss.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-dark-border/40 py-8 bg-[#0b0f19] text-center text-xs text-gray-500">
-        <p>© 2026 HairScope AI. Built using the full MERN Stack. All rights reserved.</p>
+      <footer className="border-t border-dark-border/60 py-8 text-center">
+        <p className="font-readout text-[10px] text-gray-500 tracking-widest">© 2026 HAIRSCOPE AI — MERN STACK</p>
       </footer>
     </div>
   );
