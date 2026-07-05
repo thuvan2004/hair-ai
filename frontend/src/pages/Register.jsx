@@ -63,14 +63,14 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] flex items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-[#090B10] flex items-center justify-center p-6 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-violet/10 blur-[130px] rounded-full -z-10"></div>
 
       <div className="w-full max-w-lg glass-card p-8 flex flex-col gap-6 my-10 animate-fade-in">
         <div className="text-center">
           <Link to="/" className="inline-block mb-3">
-            <span className="text-2xl font-black bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
+            <span className="text-2xl font-display font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent tracking-tight">
               HAIRSCOPE AI
             </span>
           </Link>
@@ -97,7 +97,7 @@ const Register = () => {
                   placeholder="John Doe"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                  className="w-full pl-10 pr-4 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
                   required
                 />
               </div>
@@ -113,7 +113,7 @@ const Register = () => {
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                  className="w-full pl-10 pr-4 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
                   required
                 />
               </div>
@@ -131,7 +131,7 @@ const Register = () => {
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                  className="w-full pl-10 pr-4 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
                   required
                 />
               </div>
@@ -147,7 +147,7 @@ const Register = () => {
                   placeholder="••••••••"
                   value={formData.confirmPassword}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                  className="w-full pl-10 pr-4 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
                   required
                 />
               </div>
@@ -167,7 +167,7 @@ const Register = () => {
                   max="100"
                   value={formData.age}
                   onChange={handleChange}
-                  className="w-full pl-8 pr-2 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                  className="w-full pl-8 pr-2 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
                   required
                 />
               </div>
@@ -179,7 +179,7 @@ const Register = () => {
                 name="gender"
                 value={formData.gender}
                 onChange={handleChange}
-                className="w-full px-3 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                className="w-full px-3 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
               >
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -198,7 +198,7 @@ const Register = () => {
                   placeholder="USA"
                   value={formData.country}
                   onChange={handleChange}
-                  className="w-full pl-8 pr-2 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                  className="w-full pl-8 pr-2 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
                   required
                 />
               </div>
@@ -212,7 +212,7 @@ const Register = () => {
                 name="familyHistory"
                 value={formData.familyHistory}
                 onChange={handleChange}
-                className="w-full px-3 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                className="w-full px-3 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
               >
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -226,7 +226,7 @@ const Register = () => {
                 name="dietType"
                 value={formData.dietType}
                 onChange={handleChange}
-                className="w-full px-3 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                className="w-full px-3 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
               >
                 <option value="Non-Vegetarian">Non-Vegetarian</option>
                 <option value="Vegetarian">Vegetarian</option>
