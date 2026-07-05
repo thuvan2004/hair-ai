@@ -62,7 +62,7 @@ const Dashboard = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-white">Hello, {user?.name || 'User'}</h1>
+          <h1 className="text-3xl font-display font-bold text-white">Hello, {user?.name || 'User'}</h1>
           <p className="text-sm text-gray-400">Here is your current hair health summary</p>
         </div>
         <Link
@@ -110,7 +110,7 @@ const Dashboard = () => {
               </div>
               <div>
                 <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Norwood Stage</p>
-                <h3 className="text-2xl font-black text-white mt-0.5">{latest.norwoodStage}</h3>
+                <h3 className="text-2xl font-readout font-semibold text-white mt-0.5">{latest.norwoodStage}</h3>
               </div>
             </div>
 
@@ -120,7 +120,7 @@ const Dashboard = () => {
               </div>
               <div>
                 <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Density Score</p>
-                <h3 className="text-2xl font-black text-white mt-0.5">{latest.densityScore}/100</h3>
+                <h3 className="text-2xl font-readout font-semibold text-white mt-0.5">{latest.densityScore}/100</h3>
               </div>
             </div>
 
@@ -130,7 +130,7 @@ const Dashboard = () => {
               </div>
               <div>
                 <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Hair Health Score</p>
-                <h3 className="text-2xl font-black text-white mt-0.5">{latest.healthScore}/100</h3>
+                <h3 className="text-2xl font-readout font-semibold text-white mt-0.5">{latest.healthScore}/100</h3>
               </div>
             </div>
 
@@ -157,15 +157,15 @@ const Dashboard = () => {
               <div className="h-[280px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#232d42" vertical={false} />
-                    <XAxis dataKey="date" stroke="#9ca3af" fontSize={11} />
-                    <YAxis domain={[0, 100]} stroke="#9ca3af" fontSize={11} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#262B3A" vertical={false} />
+                    <XAxis dataKey="date" stroke="#8B93A7" fontSize={11} />
+                    <YAxis domain={[0, 100]} stroke="#8B93A7" fontSize={11} />
                     <Tooltip
-                      contentStyle={{ backgroundColor: '#161c2a', borderColor: '#232d42', borderRadius: '12px' }}
+                      contentStyle={{ backgroundColor: '#12141C', borderColor: '#262B3A', borderRadius: '12px' }}
                       labelStyle={{ color: '#fff', fontWeight: 'bold' }}
                     />
-                    <Line type="monotone" dataKey="density" name="Density" stroke="#06b6d4" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 6 }} />
-                    <Line type="monotone" dataKey="health" name="Health Score" stroke="#7c3aed" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 6 }} />
+                    <Line type="monotone" dataKey="density" name="Density" stroke="#00C2D1" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 6 }} />
+                    <Line type="monotone" dataKey="health" name="Health Score" stroke="#6D5DF6" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 6 }} />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
