@@ -1,49 +1,57 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        dark: {
-          bg: '#0b0f19',       // Deep night slate
-          card: '#161c2a',     // Slate gray card
-          border: '#232d42',   // Muted indigo border
-          text: '#f3f4f6'      // Light text
-        },
-        brand: {
-          violet: '#7c3aed',   // Main accent violet
-          cyan: '#06b6d4',     // Secondary cyan
-          emerald: '#10b981',  // Success indicator
-          rose: '#f43f5e'      // Error indicator
-        }
+        // Surfaces — cooler, near-black, less blue-purple murk than before
+        'dark-bg': '#090B10',
+        'dark-card': '#12141C',
+        'dark-border': '#262B3A',
+
+        // Brand accents — sharpened, more instrument-grade than "generic AI gradient"
+        'brand-violet': '#6D5DF6',
+        'brand-cyan': '#00C2D1',
+        'brand-emerald': '#17C978',
+        'brand-amber': '#F5A623',
+        'brand-rose': '#FF4D6A',
       },
       fontFamily: {
-        sans: ['Outfit', 'Inter', 'sans-serif'],
+        // Display: technical/geometric — used sparingly for wordmark + hero
+        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        // Body: default
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        // Data/readout font — reinforces the "diagnostic instrument" feel for scores
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
       },
-      animation: {
-        'pulse-scan': 'scan 2s linear infinite',
-        'fade-in': 'fadeIn 0.3s ease-out forwards',
-        'slide-up': 'slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+      boxShadow: {
+        'instrument': '0 1px 0 0 rgba(255,255,255,0.04) inset, 0 20px 40px -20px rgba(0,0,0,0.6)',
       },
       keyframes: {
-        scan: {
-          '0%, 100%': { transform: 'translateY(0%)', opacity: 0.8 },
-          '50%': { transform: 'translateY(100%)', opacity: 0.2 },
+        'fade-in': {
+          '0%': { opacity: 0, transform: 'translateY(6px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
-        fadeIn: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 }
+        'slide-up': {
+          '0%': { opacity: 0, transform: 'translateY(16px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: 0 },
-          '100%': { transform: 'translateY(0)', opacity: 1 }
-        }
-      }
+        'pulse-scan': {
+          '0%': { top: '0%', opacity: 0 },
+          '10%': { opacity: 1 },
+          '90%': { opacity: 1 },
+          '100%': { top: '100%', opacity: 0 },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.4s ease-out',
+        'slide-up': 'slide-up 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+        'pulse-scan': 'pulse-scan 2.2s ease-in-out infinite',
+      },
     },
   },
   plugins: [],
-}
+};
