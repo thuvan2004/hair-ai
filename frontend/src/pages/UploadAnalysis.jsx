@@ -132,8 +132,8 @@ const UploadAnalysis = () => {
 
       {/* Main scanning screen overlay */}
       {isScanning && (
-        <div className="fixed inset-0 bg-[#0b0f19]/90 backdrop-blur-md z-50 flex flex-col items-center justify-center p-6 text-center">
-          <div className="relative w-64 h-64 rounded-2xl overflow-hidden border border-brand-violet/40 mb-8 max-w-full">
+        <div className="fixed inset-0 bg-[#090B10]/90 backdrop-blur-md z-50 flex flex-col items-center justify-center p-6 text-center">
+          <div className="scan-frame relative w-64 h-64 rounded-2xl overflow-hidden border border-brand-violet/40 mb-8 max-w-full">
             {/* Show whatever preview is available */}
             <img
               src={previews.front || previews.top || previews.crown}
@@ -141,7 +141,7 @@ const UploadAnalysis = () => {
               alt="Scanning view"
             />
             {/* Pulsing scanning bar */}
-            <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent top-0 animate-pulse-scan shadow-[0_0_10px_#06b6d4]"></div>
+            <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent top-0 animate-pulse-scan shadow-[0_0_10px_#00C2D1]"></div>
           </div>
           
           <div className="flex items-center gap-3 mb-3">
@@ -155,7 +155,7 @@ const UploadAnalysis = () => {
       )}
 
       <div>
-        <h1 className="text-3xl font-extrabold text-white">AI Diagnostic Scan</h1>
+        <h1 className="text-3xl font-display font-bold text-white">AI Diagnostic Scan</h1>
         <p className="text-sm text-gray-400">Upload hair and scalp photos to trigger deep analysis</p>
       </div>
 
@@ -164,9 +164,9 @@ const UploadAnalysis = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Front hairline */}
           <div className="glass-card p-6 flex flex-col gap-4 items-center justify-center text-center relative min-h-[220px]">
-            <h3 className="text-sm font-bold text-white">1. Front Hairline</h3>
+            <h3 className="text-sm font-bold text-white"><span className="font-readout text-brand-cyan">01</span> Front Hairline</h3>
             {previews.front ? (
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-dark-border">
+              <div className="scan-frame relative w-full aspect-square rounded-xl overflow-hidden border border-dark-border">
                 <img src={previews.front} className="w-full h-full object-cover" alt="Preview" />
                 <button
                   type="button"
@@ -193,9 +193,9 @@ const UploadAnalysis = () => {
 
           {/* Top scalp */}
           <div className="glass-card p-6 flex flex-col gap-4 items-center justify-center text-center relative min-h-[220px]">
-            <h3 className="text-sm font-bold text-white">2. Top Scalp</h3>
+            <h3 className="text-sm font-bold text-white"><span className="font-readout text-brand-cyan">02</span> Top Scalp</h3>
             {previews.top ? (
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-dark-border">
+              <div className="scan-frame relative w-full aspect-square rounded-xl overflow-hidden border border-dark-border">
                 <img src={previews.top} className="w-full h-full object-cover" alt="Preview" />
                 <button
                   type="button"
@@ -222,9 +222,9 @@ const UploadAnalysis = () => {
 
           {/* Crown */}
           <div className="glass-card p-6 flex flex-col gap-4 items-center justify-center text-center relative min-h-[220px]">
-            <h3 className="text-sm font-bold text-white">3. Crown (Vertex)</h3>
+            <h3 className="text-sm font-bold text-white"><span className="font-readout text-brand-cyan">03</span> Crown (Vertex)</h3>
             {previews.crown ? (
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-dark-border">
+              <div className="scan-frame relative w-full aspect-square rounded-xl overflow-hidden border border-dark-border">
                 <img src={previews.crown} className="w-full h-full object-cover" alt="Preview" />
                 <button
                   type="button"
@@ -261,7 +261,7 @@ const UploadAnalysis = () => {
               <p className="text-xs text-gray-400">Syncs meal plan generator according to preference</p>
             </div>
           </div>
-          <div className="flex gap-2 p-1 bg-[#0f1422] border border-dark-border rounded-xl">
+          <div className="flex gap-2 p-1 bg-[#0D0F16] border border-dark-border rounded-xl">
             <button
               type="button"
               onClick={() => setDietType('Non-Vegetarian')}
