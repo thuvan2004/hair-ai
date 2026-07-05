@@ -43,7 +43,7 @@ const ComparePhotos = () => {
   if (loading) {
     return (
       <div className="flex flex-col gap-6">
-        <h1 className="text-3xl font-extrabold text-white">Compare Photos</h1>
+        <h1 className="text-3xl font-display font-bold text-white">Compare Photos</h1>
         <CardSkeleton />
       </div>
     );
@@ -69,7 +69,7 @@ const ComparePhotos = () => {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-3xl font-extrabold text-white">Compare Diagnostics</h1>
+        <h1 className="text-3xl font-display font-bold text-white">Compare Diagnostics</h1>
         <p className="text-sm text-gray-400">Track and compare physical hair loss developments visually</p>
       </div>
 
@@ -101,7 +101,7 @@ const ComparePhotos = () => {
                 <select
                   value={photoType}
                   onChange={(e) => setPhotoType(e.target.value)}
-                  className="w-full px-3 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                  className="w-full px-3 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
                 >
                   <option value="front">Front Hairline</option>
                   <option value="top">Top Scalp</option>
@@ -115,7 +115,7 @@ const ComparePhotos = () => {
                 <select
                   value={beforeId}
                   onChange={(e) => setBeforeId(e.target.value)}
-                  className="w-full px-3 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                  className="w-full px-3 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
                 >
                   {history.map(item => (
                     <option key={item._id} value={item._id}>
@@ -131,7 +131,7 @@ const ComparePhotos = () => {
                 <select
                   value={afterId}
                   onChange={(e) => setAfterId(e.target.value)}
-                  className="w-full px-3 py-2.5 bg-[#0f1422] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
+                  className="w-full px-3 py-2.5 bg-[#0D0F16] border border-dark-border rounded-xl text-sm text-white focus:outline-none focus:border-brand-violet transition-colors"
                 >
                   {history.map(item => (
                     <option key={item._id} value={item._id}>
@@ -144,7 +144,7 @@ const ComparePhotos = () => {
               {/* Compare mode */}
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-semibold text-gray-300">Comparison Format</label>
-                <div className="grid grid-cols-2 gap-2 p-1 bg-[#0f1422] border border-dark-border rounded-xl">
+                <div className="grid grid-cols-2 gap-2 p-1 bg-[#0D0F16] border border-dark-border rounded-xl">
                   <button
                     onClick={() => setCompareMode('slider')}
                     className={`flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-bold transition-all ${compareMode === 'slider' ? 'bg-brand-violet text-white' : 'text-gray-400 hover:text-white'
