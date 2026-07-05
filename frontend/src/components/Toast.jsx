@@ -11,9 +11,9 @@ const Toast = ({ message, type = 'success', onClose, duration = 4000 }) => {
   }, [onClose, duration]);
 
   const typeStyles = {
-    success: 'bg-[#10b981]/10 text-emerald-400 border-[#10b981]/30 hover:border-[#10b981]/50',
-    error: 'bg-[#f43f5e]/10 text-rose-400 border-[#f43f5e]/30 hover:border-[#f43f5e]/50',
-    info: 'bg-[#06b6d4]/10 text-cyan-400 border-[#06b6d4]/30 hover:border-[#06b6d4]/50'
+    success: 'bg-[#17C978]/10 text-emerald-400 border-[#17C978]/30 hover:border-[#17C978]/50',
+    error: 'bg-[#FF4D6A]/10 text-rose-400 border-[#FF4D6A]/30 hover:border-[#FF4D6A]/50',
+    info: 'bg-[#00C2D1]/10 text-cyan-400 border-[#00C2D1]/30 hover:border-[#00C2D1]/50'
   };
 
   const icons = {
