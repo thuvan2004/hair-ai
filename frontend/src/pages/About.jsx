@@ -23,7 +23,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-gray-100 p-6 md:p-12">
+    <div className="min-h-screen bg-[#090B10] text-gray-100 p-6 md:p-12">
       <div className="max-w-4xl mx-auto w-full">
         <Link
           to="/"
@@ -32,7 +32,7 @@ const About = () => {
           <ArrowLeft className="w-4 h-4" /> Back to Home
         </Link>
 
-        <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-2">The Science Behind HairScope</h1>
+        <h1 className="text-3xl md:text-4xl font-display font-bold text-white mb-2">The Science Behind HairScope</h1>
         <p className="text-gray-400 mb-12">Learn how computer vision and nutritional diagnostics help monitor hair conditions.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
