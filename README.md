@@ -147,7 +147,7 @@ The React development server will start on [http://localhost:5173](http://localh
 
 ## 10. Deployment Guide
 
-### Frontend (Vercel)
+### Frontend (netfily)
 Ensure the root Vite environment variable maps requests to your remote production API server instead of localhost.
 Deploy the `frontend/` directory directly to Vercel, pointing output paths to `dist/`.
 
