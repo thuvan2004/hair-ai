@@ -147,11 +147,11 @@ The React development server will start on [http://localhost:5173](http://localh
 
 ## 10. Deployment Guide
 
-### Frontend (netfily)
+### Frontend (render)
 Ensure the root Vite environment variable maps requests to your remote production API server instead of localhost.
 Deploy the `frontend/` directory directly to Vercel, pointing output paths to `dist/`.
 
-### Backend (Render / Heroku)
+### Backend railway)
 Deploy the `backend/` folder. Configure your MongoDB Atlas connection string as `MONGO_URI` and define a secure `JWT_SECRET` in your dashboard environment settings.
 
 
