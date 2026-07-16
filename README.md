@@ -153,3 +153,4 @@ Deploy the `frontend/` directory directly to Vercel, pointing output paths to `d
 
 ### Backend (Render / Heroku)
 Deploy the `backend/` folder. Configure your MongoDB Atlas connection string as `MONGO_URI` and define a secure `JWT_SECRET` in your dashboard environment settings.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20HairScope%20AI-brightgreen?style=for-the-badge)](https://hair-ai-1-8hne.onrender.com/)
