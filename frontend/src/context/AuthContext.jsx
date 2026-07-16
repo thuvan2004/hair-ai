@@ -4,7 +4,8 @@ import axios from 'axios';
 const AuthContext = createContext();
 
 // Default API URL fallback
-axios.defaults.baseURL = ''; 
+axios.defaults.baseURL =
+  import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
