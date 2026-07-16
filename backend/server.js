@@ -83,4 +83,4 @@ mongoose.connect(DB_URI)
   .catch((err) => {
     console.error('MongoDB database connection error:', err);
     process.exit(1);
-  }); server js okaya paru
+  }); 
