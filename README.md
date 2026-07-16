@@ -32,6 +32,21 @@ graph TD
 
 ---
 
+# HairScope AI
+
+AI-powered hair loss analyzer and progress tracking platform.
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Application-brightgreen?style=for-the-badge)](https://hair-ai-1-8hne.onrender.com/)
+
+## Live Demo
+
+🌐 **Application:** [https://hair-ai-1-8hne.onrender.com/](https://hair-ai-1-8hne.onrender.com/)
+
+
+
+
+
+
 ## 2. MongoDB Schemas
 
 We define three core Mongoose database collections. Click the links below to view the files:
@@ -158,12 +173,3 @@ Deploy the `backend/` folder. Configure your MongoDB Atlas connection string as 
 
 
 
-# HairScope AI
-
-AI-powered hair loss analyzer and progress tracking platform.
-
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Application-brightgreen?style=for-the-badge)](https://hair-ai-1-8hne.onrender.com/)
-
-## Live Demo
-
-🌐 **Application:** [https://hair-ai-1-8hne.onrender.com/](https://hair-ai-1-8hne.onrender.com/)
